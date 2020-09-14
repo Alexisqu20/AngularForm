@@ -1,0 +1,24 @@
+<div class="content" >
+<button type="button" (click)="openModal()"> Crear </button>
+<table class="table table-striped table-dark container">
+    <thead>
+        <td>Código</td>
+        <td>Descripción</td>
+        <td>Valor</td>
+        <td> Fecha</td>
+        <td> Acciones</td>
+      <tbody>
+        <tr *ngFor="let producto of lst">
+            <td>{{ producto.codp }}</td>
+            <td>{{ producto.desp }}</td>
+            <td>{{ producto.valp | currency }}</td>
+            <td>{{ producto.fecha }}</td>
+                <td>
+                    <span (click)="openEditModal(producto)"> Editar </span>
+                    <span (click)="delete(producto)"> Eliminar </span>
+                </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
